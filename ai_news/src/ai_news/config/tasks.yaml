@@ -1,0 +1,31 @@
+collect_news:
+  description: >
+    Conduct a thorough research about {topic}
+    Make sure you find any interesting and relevant information given
+    the current year is {current_year}.
+  expected_output: >
+    A list with 5 websites with the most relevant information about {topic}
+  agent: news_collector
+
+scrape_website:
+  description: >
+    Scrape the website for latest news and information
+  expected_output: >
+    Fully scraped website with all the important information from the website
+  agent: website_scraper
+
+write_news:
+  description: >
+    Summarise the information from the website into a fully fledged news article in markdown format
+  expected_output: >
+    Fully fledged news article with the main topics, each with a section full of information.
+    Formatted as markdown without '```'
+  agent: ai_news_writer
+
+write_file:
+  description: >
+    Write the news article to a file
+  expected_output: >
+    Fully fledged news article with all the information from the previous task into a file named news/{date}news_AI.md
+    Formatted as markdown without '```'
+  agent: file_writer
